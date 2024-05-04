@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+    
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+         <link rel="shortcut icon" href="img\logo.png" />
+
+        <title> Site Tronix | Home</title>
+
+        <!-- CSS FILES -->                
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200&family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+        
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/tooplate-kool-form-pack.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        
+        
+         
+        <!-- Two links -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+        
+        
+<!--
+
+Tooplate 2136 Kool Form Pack
+
+https://www.tooplate.com/view/2136-kool-form-pack
+
+Bootstrap 5 Form Pack Template
+
+-->
+    </head>
+    
+    <body>
+        <main>
+
+            <header class="site-header">
+                <div class="container">
+                    <div class="row justify-content-between">
+
+                        <div class="col-lg-12 col-12 d-flex align-items-center">
+                            <a class="site-header-text d-flex justify-content-center align-items-center me-auto" th:href="@{/}">
+                                <i class="bi-box"></i>
+
+                                <span>
+                                    SITE TRONIX
+                                </span>
+                            </a>
+
+                            <ul class="social-icon d-flex justify-content-center align-items-center mx-auto">
+                                <span class="text-white me-4 d-none d-lg-block"> Будь на зв'язку</span>
+
+                                <li class="social-icon-item">
+                                    <a href="https://www.instagram.com/site_tronix/" class="social-icon-link bi-instagram"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="https://t.me/vsprava" class="social-icon-link bi-telegram"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="viber://chat?number=%2B380977528559" class="social-icon-link bi-whatsapp"></a>
+                                </li>
+                            </ul>
+
+                            <div>
+                                <a href="#" class="custom-btn custom-border-btn btn" data-bs-toggle="modal" data-bs-target="#subscribeModal">Зв'язатися
+                                    <i class="bi-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+
+                            <a class="bi-list offcanvas-icon" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu" id="OpenMenu"></a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">                
+                <div class="offcanvas-header">                    
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                
+                <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+                    <nav>
+                        <ul>
+                           <!--  <li>
+                                <a href="#contacts">Контакти</a>
+                            </li> --> 
+
+                            <li>
+                                <a th:href="@{/services}">Сервіси</a>
+                            </li>
+
+                            <li>
+                                <a th:href="@{/portfolio}">Портфоліо</a>
+                            </li>
+
+                             <li>
+                                <a th:href="@{/#contacts}">Контакти</a>
+                            </li>
+
+                            <li>
+                                <a th:href="@{/about}">Деталі</a>
+                            </li>
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <form th:action="@{/}" th:object="${usermessage}" method ="post" id="add-form2" class="custom-form mt-lg-4 mt-2" role="form">
+                                <h2 class="modal-title" id="subscribeModalLabel">Stay with Site Tronix</h2>
+
+                                <input type="email" name="email" field="*{email}"  id="email"  class="form-control" placeholder="почта@email.com" required="">
+                                <input type="text" name="mobile" field="*{mobile}" id="tel"  class="form-control" placeholder="мобільний" required="">
+                                <input type="text" name="name" field="*{name}" id="text"  class="form-control" placeholder="ім'я" required="">
+                                <!-- pattern="[^ @]*@[^ @]*" -->
+
+                                <button type="submit" class="form-control">Відправити</button>
+                            </form>
+                        </div>
+                        
+        
+
+                        <div class="modal-footer justify-content-center">
+                            <p>By signing up, you agree to our Privacy Notice</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12 mx-auto">
+                            <small> 
+                            <a rel="nofollow" target="_blank" href="https://www.pexels.com/video/digital-projection-of-the-earth-mass-in-blue-lights-3129957/">EVERY ORDER IS A PIECE OF HAPPINESS  </a></small>
+                            <!-- please set the date time in the init.js file -->
+                            
+                          <h1 class="text-white mt-2 mb-4 pb-2">
+                               Замовляй - вебсайт
+                            </h1>
+                            <small> <a rel="nofollow" target="_blank" href="https://www.pexels.com/video/digital-projection-of-the-earth-mass-in-blue-lights-3129957/">EVERY ORDER IS A PIECE OF HAPPINESS  </a></small>
+                           
+
+                             <ul class="countdown d-flex flex-wrap align-items-center">
+                               <li class="countdown-item d-flex flex-column justify-content-center align-items-center">
+                                    <h2 class="countdown-title days">14</h2>
+                                    <span class="countdown-text">Days</span>
+                               </li>
+
+                               <li class="countdown-item d-flex flex-column justify-content-center align-items-center">
+                                    <h2 class="countdown-title hours">10</h2>
+                                    <span class="countdown-text">Hours</span>
+                               </li>
+
+                               <li class="countdown-item d-flex flex-column justify-content-center align-items-center">
+                                    <h2 class="countdown-title minutes">15</h2>
+                                    <span class="countdown-text">Minutes</span>
+                               </li>
+
+                               <li class="countdown-item d-flex flex-column justify-content-center align-items-center">
+                                    <h2 class="countdown-title seconds">34</h2>
+                                    <span class="countdown-text">Seconds</span>
+                               </li>     
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-wrap">
+                    <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                        <source src="videos/video.mp4" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+        </main>
+        
+        
+        <!-- Services Section Begin -->
+    <section class="services spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="services__title">
+                        <div class="section-title">
+                            <span>Site Tronix Етапи</span>
+                            <h2>Як ми працюємо?</h2>
+                        </div>
+                        <p>Кожен етап узгоджується з замовником та відповідає конкретним сервісам  </p>
+                        <a th:href="@{/services}" class="primary-btn">Детальніше про сервіси</a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="services__item">
+                                <div class="services__item__icon">
+                                    <img src="img/icons/si-1.png" alt="">
+                                </div>
+                                <h4>Технології</h4>
+                                <p>Ми використовуємо найновіші технології розробки вебсервісів. Мова програмування Java 17, Java Script, 
+                                фреймворки Spring Boot, BootStrap. Сервлети Tomcat та інші.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="services__item">
+                                <div class="services__item__icon">
+                                    <img src="img/icons/si-2.png" alt="">
+                                </div>
+                                <h4>Контент</h4>
+                                <p>Спеціально для наших замовників, підбираємо контент вебдодатку відповідно до тематики замовлення. 
+                                Узгоджуємо даний контент, його кількість та публікуємо на сайті.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="services__item">
+                                <div class="services__item__icon">
+                                    <img src="img/icons/si-9.jpg" alt="">
+                                </div>
+                                <h4>Домен</h4>
+                                <p>Закріплюємо доменне ім'я за вашим вебсайтом. Cайт буде доступний для інших користувачів інтернету, 
+                                за індивідуальним посиланням <br>(<em>www.вашсайт.com, www.вашсайт.com.ua, www.вашсайт.net та інші) </em> </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="services__item">
+                                <div class="services__item__icon">
+                                    <img src="img/icons/si-4.png" alt="">
+                                </div>
+                                <h4>Хостинг</h4>
+                                <p>Розміщуємо вебсайти на серверах. Замовник має доступ до серверів, бази даних, контактів, 
+                                та іншої інформації яку розповсюджує або збирає ваш інтернет-ресурс.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+    
+    <!--  PORTFOLIO -->
+    
+       <!-- Work Section Begin -->
+       
+       
+       <!-- GALERY <div class="work__item small__item set-bg" data-setbg="img/work/work-3.jpg">
+                <a href="" data-src="img/work/work-3.jpg" class="" data-fancybox="gallery">
+                <img  src="img/work/work-3.jpg" width="800" height="350" alt="" />
+                        </a>
+            </div> -->
+      
+    <section class="work">
+  
+        <div class="work__gallery">
+            <div class="grid-sizer"></div>
+            <div class="work__item wide__item set-bg" data-setbg="img/portfolio/site4.jpg">
+                <a href="https://kolesnik1994.github.io/Avos/index.html">
+                <img  style ="visibility: hidden" src ="img/portfolio/site4.jpg" width="400" height="240" alt=""  />
+                </a>
+                <div class="work__item__hover">
+                    <h4>Web Design Agency</h4>
+                    <ul>
+                        <li>eCommerce</li>
+                        <li>Business</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="work__item small__item set-bg" data-setbg="img/portfolio/site7.jpg">
+                <a href="https://kolesnik1994.github.io/Resume/index.html">
+                <img style ="visibility: hidden" src="img/portfolio/site7.jpg" width="800" height="320"  alt="" />
+                </a>
+            </div>
+            
+            <div class="work__item small__item set-bg" data-setbg="img/portfolio/app.jpg">
+                <a href="https://technext.github.io/applab_2/v1.0.0/">
+                <img style ="visibility: hidden" src="img/portfolio/app.jpg" width="800" height="350" alt="" />
+                        </a>
+            </div>
+            
+            <!-- style="visibility: hidden" -->
+            <div class="work__item large__item set-bg" data-setbg="img/portfolio/sonar.jpg">
+                <a href="https://kolesnik1994.github.io/Sonar/index.html">
+                 <img  style ="visibility: hidden" src="img/portfolio/sonar.jpg" width="800" height="700" alt="" /></a>
+                <div class="work__item__hover">
+                    <h4>Photo Studio</h4>
+                    <ul>
+                        <li>Art</li>
+                        <li>Business</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="work__item small__item set-bg" data-setbg="img/portfolio/site5.jpg">
+                <a href="https://technext.github.io/anime/index.html">
+                 <img style ="visibility: hidden" src="img/portfolio/site5.jpg" width="800" height="310" alt="" /></a>
+             
+            </div>
+            
+            <div class="work__item small__item set-bg" data-setbg="img/portfolio/crypto11.jpg">
+                <a href="https://themewagon.github.io/cyption/">
+                <img style ="visibility: hidden" src="img/portfolio/crypto11.jpg" width="800" height="310" alt="" /></a>
+                </a>
+            </div>
+            
+            <div class="work__item wide__item set-bg" data-setbg="img/portfolio/site6.jpg">
+                <a href="https://kolesnik1994.github.io/Fruit/index.html">
+                <img style ="visibility: hidden" src="img/portfolio/site6.jpg" width="800" height="310" alt="" />
+                        </a>
+                <div class="work__item__hover">
+                    <h4>Fruit Shop</h4>
+                    <ul>
+                        <li>eCommerce</li>
+                        <li>Business</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br>
+         <center> <a th:href="@{/portfolio}" class="primary-btn">Більше Фото Робіт</a> </center>
+        
+         <br style="background: black">
+    </section>
+    
+    <!-- Portfolio Section End -->
+    
+    
+    <!-- Breadcrumb Begin -->
+
+     
+      
+   
+    <!-- Breadcrumb End -->
+
+    <!-- Contact Widget Section Begin -->
+    <section class="contact-widget spad" id="contacts">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-md-6 col-md-3">
+                    <div class="contact__widget__item">
+                        <div class="contact__widget__item__icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="contact__widget__item__text">
+                            <h4>Website</h4>
+                          <a href="sitetornix.com.ua">sitetronix.com.ua</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-md-6 col-md-3">
+                    <div class="contact__widget__item">
+                        <div class="contact__widget__item__icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="contact__widget__item__text">
+                            <h4>Mobile</h4>
+                           <a href="tel:+380977228962"> +3(097)-722-89-62 </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-md-6 col-md-3">
+                    <div class="contact__widget__item">
+                        <div class="contact__widget__item__icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="contact__widget__item__text">
+                            <h4>Email</h4>
+                       <a href="mailto:vlad.kolesnyk94@gmail.com">sitetronix@tronix.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Widget Section End -->
+
+    <!-- Call To Action Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12097.397994411938!2d30.510092692429676!3d50.400768987219394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf4ee15a4505%3A0x764931d2170146fe!2z0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1712854543284!5m2!1sru!2sua"
+                           
+                            height="450" style="border:0;"></iframe>
+                    </div>
+                </div>
+           
+                <div class="col-lg-6 col-md-6">
+                     
+                    <div class="contact__form">
+                    <div id="form-container" style="position:relative;">
+                        <h3>Заповнити Форму</h3>
+                         
+                        <form action="https://script.google.com/macros/s/AKfycbyge9dyR6OtyfE2lir6f4cI32kX-7QSSRAqEgIILZeR4Z2M3JSQqoPdDheuImIkwpRg/exec" method ="post" id="add-form" name="contact-form">
+                            <input type="text" name="Name"  class="form-control" placeholder="Ім'я" required="required">
+                            <input type="email" name="Email"  class="form-control" placeholder="Почта" required="required">
+                            <input type="text" name="Mobile"  class="form-control" placeholder="Мобільний" required="required">
+                         
+                            <textarea type="text" class="form-control" name="Message" placeholder="Побажання"
+									required="required"></textarea>
+                            <button type="submit" id="subnitBtn" class="site-btn">Відправити</button>
+                      
+                            
+                            <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); /* Затемненный цвет */ z-index: 9999; /* Установите z-index, чтобы он был поверх всего остального */
+    display: none;"></div>
+              <div id="loading-spinner" style="display: none; position: absolute; /* Позиционируем спиннер абсолютно внутри контейнера */
+    top: 50%; /* Размещаем его в середине по вертикали */
+    left: 50%; /* Размещаем его в середине по горизонтали */
+    transform: translate(-50%, -50%); ">
+        <div class="spinner-border" role="status" style="color:white;">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2798902705!2d-74.25986790365917!3d40.697670067823786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1596152431947!5m2!1sen!2sbd" -->
+    <!-- Call To Action Section End -->
+    
+    
+        <section class="callto spad set-bg" data-setbg="img/2.jpg">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="callto__text">
+                        <h2>UKRAINE, Допомагаємо ЗСУ, збір на FPV Дрони .</h2>
+                        <p>INC5000, Україна починається з тебе 2025</p>
+                     <a href="#modal2" role="button" style ="background:black;" class="custom-btn custom-border-btn btn"  id="modal-btn"   onmouseover="this.style.backgroundColor='darkgrey'" onmouseout="this.style.backgroundColor='black'"> Дізнатися Більше</a>
+                     <!--   -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <!-- MODAL -->
+       
+       
+       <div class="modal-wrapper2" id="modal2">
+     
+  <div class="modal-body card">
+     <img style="height:100px; width:100px; position:center;" src="img/qr.jpg" alt="Colorlib logo">
+     <br>
+    <div class="modal-header2">
+      <h2 class="heading">Збір на FPV Drone - зачинено</h2>    
+      <a href="#!" role="button" class="close2" aria-label="close this modal">
+        <svg viewBox="0 0 24 24">
+          <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
+        </svg>
+      </a>
+    </div>
+    <p style="font-style:italic;">Нажаль збір на FVP дрони зараз недоступний.</p>
+  </div>
+  <a href="#!" class="outside-trigger2"></a>
+ 
+</div>
+       
+       
+
+    
+
+    </section>
+    
+    
+     <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__top__logo">
+                            <a  style="color:white" href="#"> SITE TRONIX DEVELOPER GROUP </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__top__social">
+                            <a href="https://t.me/vsprava"><i class="fa fa-telegram"></i></a>
+                            <a href="#"><i class="fa fa-whatsapp"></i></a>            
+                            <a href="https://www.instagram.com/site_tronix/"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__option">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="footer__option__item">
+                            <h5>Детальніше</h5>
+                            <p>SiteTronix працює над створенням інтернет-сайтів </p>
+                            <a href="#" class="read__more"> Зв'язатися <span class="arrow_right"></span></a>
+                        </div>
+                    </div>
+                    
+                        <div class="col-lg-2 col-md-3 col-sm-3">
+                        <div class="footer__option__item">
+                            <h5>Наші роботи</h5>
+                            <ul>
+                                <li><a href="#">Портфоліо #1</a></li>
+                                <li><a href="#">Портфоліо #2</a></li>
+                            <!--     <li><a href="#">Головна сторінка</a></li>--> 
+                            
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-lg-2 col-md-3 col-sm-3">
+                        <div class="footer__option__item">
+                            <h5>Others</h5>
+                            <ul>
+                                <li><a href="#">Сервіси</a></li>
+                                <li><a href="#">Контакти</a></li>
+                                <li><a href="#">Детальніше</a></li>
+                                <li><a href="#">Головна сторінка</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <div class="col-lg-4 col-md-12">
+                        <div class="footer__option__item">
+                            <h5>Новини</h5>
+                            <p>Відправити почту для отримання новин від SiteTronix</p>
+                            <form action="#">
+                                <input type="text" placeholder="Email">
+                                <button type="submit"><i class="fa fa-send"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p class="footer__copyright__text">Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>
+                            All rights reserved | This template is made with <i style="color:indigo" class="fa fa-heart-o"
+                                aria-hidden="true"></i> by <a style="color:indigo" href="" target="_blank">SiteTronix</a>
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+  
+ 
+    
+    
+
+
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/countdown.js"></script>
+        <script src="js/init.js"></script>
+        
+        
+        <!--  JS scripts 2 -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    
+    <script src="js/google.js"> </script>
+    
+    
+
+<script>
+$(document).ready(function() {
+    $("#add-form").submit(function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+        
+        // Show loading spinner
+        $("#loading-spinner").show();
+        $("#overlay").show();
+        
+        $.ajax({
+            type: "POST",
+            url: $(this).attr("action"),
+            data: $(this).serialize(),
+
+            error: function(xhr, status, error) {
+                // Handle the error (if needed)
+                console.error(xhr.responseText);
+            },
+            success: function(response) {
+                // After successful form submission, reset the form
+                $("#add-form")[0].reset();
+                window.close(); 
+            }
+        }).then(function() {
+            // Reload the page after successful AJAX request
+            window.location.reload();
+        }).always(function() {
+            // Hide loading spinner
+            $("#loading-spinner").hide();
+            $("#overlay").hide();
+        });
+    });
+});
+    </script> 
+    
+    
+    <script > 
+    
+    document.getElementById('add-form2').addEventListener('submit', function(event) {
+        // Prevent the form from submitting
+        event.preventDefault();
+
+        // Get the values of the input fields
+        var email = document.getElementById('email').value;
+        var mobile = document.getElementById('tel').value;
+        var name = document.getElementById('text').value;
+
+        // Construct the alert message
+        var alertMessage = "Email: " + email + "\nMobile: " + mobile + "\nName: " + name;
+
+        // Display the alert message
+        alert(alertMessage);
+        
+        window.location.href = "/";
+    });
+    </script>
+    
+ 
+       
+    
+    <script> 
+    let myOffcanvas = document.getElementById('offcanvasMenu');
+
+    myOffcanvas.addEventListener('hide.bs.offcanvas', function (e) {
+        let currentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        setTimeout((() => {
+            document.documentElement.scrollTop = document.body.scrollTop = currentScrollTop;
+        }), 310);
+    });  
+    </script>
+    
+  <!--  <script> 
+    
+    document.getElementById('add-form').addEventListener('submit', function(event) {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thank you! your form is submitted successfully." ))
+      .then(() => { window.location.reload(); })
+      .catch(error => console.error('Error!', error.message))
+    })
+    
+    
+    </script> -->  
+    
+  
+    </body>
+    
+ <style> 
+ 
+ .modal-header2 {
+  color:bLack;
+  margin-top:20px;
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+}
+
+.close2 {
+position:right;
+  padding-top: 50 px;
+  background: none;
+  border: white;
+  cursor: pointer;
+  display: flex;
+  height: 16px;
+  text-decoration: none;
+  width: 16px;
+
+  svg {
+    width: 16px;
+  }
+}
+
+.modal-wrapper2 {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+#modal2 {
+  opacity: 0;
+  transition: opacity;
+  visibility: hidden;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+
+    .modal-body {
+      opacity: 1;
+      transform: translateY(1);
+    }
+  }
+
+  .modal-body {
+    background:indigo;
+    max-width: 500px;
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: opacity;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.outside-trigger2 {
+  bottom: 0;
+  cursor: default;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.button__link2 {
+  text-decoration: none;
+}
+ 
+ </style>
+    
+</html>

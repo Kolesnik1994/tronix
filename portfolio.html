@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Videograph Template">
+    <meta name="keywords" content="Videograph, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="shortcut icon" href="img\logo.png" />
+       
+   <link rel="shortcut icon" href="img\logo.png" />
+    
+    <title>Site Tronix | Portfolio</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+        
+        
+        <!-- Css Styles 2--> 
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/tooplate-kool-form-pack.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+        
+
+    <!-- Css Styles 2-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo"> 
+                        <a style="color:white;" th:href="@{/}">SITE TRONIX</a> <!-- 𝕊𝕚𝕥𝕖𝕋𝕣𝕠𝕟𝕚𝕩 -->
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="header__nav__option">
+                        <nav class="header__nav__menu mobile-menu">
+                            <ul>
+                                <li><a th:href="@{/}">Початкова</a></li>
+                                <li><a th:href="@{/services}">Сервіси</a></li>
+                                <li class="active"><a style="text-decoration:none" th:href="@{/portfolio}">Портфоліо</a></li>
+                                <li><a th:href="@{/#contacts}">Контакти</a></li>
+                                <li><a href="#">Сторінки</a>
+                                    <ul class="dropdown">
+                                        <li><a th:href="@{/}">Початкова</a></li>
+                                        <li><a th:href="@{/portfolio}">Портфоліо</a></li>
+                                        <li><a th:href="@{/services}">Сервіси</a></li>
+                                        <li><a th:href="@{/about}">Детальніше</a></li>
+                                    </ul>
+                                </li>
+                               
+                            </ul>
+                        </nav>
+                        <div class="header__nav__social">
+                        <ul>
+                           <li class="social-icon-item">
+                                    <a href="https://www.instagram.com/site_tronix/" class="social-icon-link bi-instagram"></a>
+                                </li>
+                                  <li class="social-icon-item">
+                                    <a href="https://t.me/vsprava" class="social-icon-link bi-telegram"></a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link bi-whatsapp"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Breadcrumb Begin -->
+    <div style ="height:70px" class="breadcrumb-option spad set-bg" data-setbg="img/jump.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>ПОРТФОЛІО РОБІТ</h2>
+                      <!--  <div class="breadcrumb__links">
+                            <a href="#">Home</a>
+                            <span>About</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    <!-- Breadcrumb End -->
+
+    <!-- Portfolio Section Begin -->
+    <section class="portfolio spad" style="background: linear-gradient(indigo, black, black, black, black, black, black)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="portfolio__filter">
+                        <li class="active" data-filter="*">All</li>
+                   
+                        <li data-filter=".branding">Branding</li>
+                        <li data-filter=" .ecommerce">eCommerce</li>
+                        
+                        <li data-filter=".web">Web</li>
+                        <li data-filter=".photography">Photography</li>
+                        <li data-filter=".digital-marketing">Other</li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="row portfolio__gallery">
+            
+                
+                <div class="col-lg-4 col-md-6 col-sm-6 mix ecommerce">
+                    <div class="portfolio__item">
+                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-9.jpg">
+                            <a href="https://kolesnik1994.github.io/Electro/index1.html">
+                             <img  src="img/portfolio/electro.jpg" width="400" height="240" alt="" /></a>
+                        </div>
+                        <div class="portfolio__item__text">
+                            <h4> Electronics Store</h4>
+                            <ul>
+                                <li>eCommerce</li>
+                                <li>Business</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 col-sm-6 mix ecommerce">
+                    <div class="portfolio__item">
+                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-2.jpg">
+                            <a href="https://technext.github.io/foodwagon/v1.0.0/index.html" >
+                             <img  src="img/portfolio/site22.jpg" width="400" height="240" alt="" /></a>
+                        </div>
+                        <div class="portfolio__item__text">
+                            <h4>Food Store</h4>
+                            <span>eCommerce</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 col-sm-6 mix photography">
+                    <div class="portfolio__item">
+                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-3.jpg">
+                            <a href="https://kolesnik1994.github.io/Sonar/index.html">
+                             <img  src="img/portfolio/site3.jpg" width="400" height="240" alt="" /></a>
+                        </div>
+                        <div class="portfolio__item__text">
+                            <h4>Sonar - Photo Studio</h4>
+                            <ul>
+                                <li>Photo Studio</li>
+                                <li>Art</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 col-sm-6 mix web">
+                    <div class="portfolio__item">
+                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-4.jpg">
+                            <a href="https://kolesnik1994.github.io/Avos/index.html">
+                             <img  src="img/portfolio/site4.jpg" width="400" height="240" alt="" /></a>
+                        </div>
+                        <div class="portfolio__item__text">
+                            <h4>Web Design Agency</h4>
+                            <ul>
+                                <li>Digital-marketing</li>
+                                <li>Business</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 col-sm-6 mix digital-marketing">
+                    <div class="portfolio__item">
+                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-5.jpg">
+                           <a href="https://technext.github.io/anime/index.html" >
+                             <img  src="img/portfolio/site5.jpg" width="400" height="240" alt="" /></a>
+                        </div>
+                        <div class="portfolio__item__text">
+                            <h4>Anime Movie</h4>
+                            <span>Online Cinema</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 mix ecommerce">
+                    <div class="portfolio__item">
+                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-6.jpg">
+                           <a href="https://kolesnik1994.github.io/Fruit/index.html">
+                             <img  src="img/portfolio/site6.jpg" width="400" height="240" alt="" /></a>
+                        </div>
+                        <div class="portfolio__item__text">
+                            <h4>Фрутіка</h4>
+                            <ul>
+                                <li>eCommerce</li>
+                                <li>Business</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 mix web">
+                    <div class="portfolio__item">
+                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-7.jpg">
+                            <a href="https://kolesnik1994.github.io/Resume/index.html" >
+                             <img  src="img/portfolio/site7.jpg" width="400" height="240" alt="" /></a>
+                        </div>
+                        <div class="portfolio__item__text">
+                            <h4>Augustin</h4>
+                            <ul>
+                                <li>WebDeveloper</li>
+                                <li>CV</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 col-sm-6 mix branding">
+                    <div class="portfolio__item">
+                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-8.jpg">
+                            <a href="https://themewagon.github.io/cyption/" >
+                             <img  src="img/portfolio/site8.jpg" width="400" height="240" alt="" /></a>
+                        </div>
+                        <div class="portfolio__item__text">
+                            <h4>ICO Agency For Blockchain</h4>
+                            <ul>
+                                <li>Branding</li>
+                                <li>Blockchain Tecnology</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-lg-4 col-md-6 col-sm-6 mix branding">
+                    <div class="portfolio__item">
+                    
+                        <div class="portfolio__item__video set-bg" data-setbg="img/portfolio/portfolio-1.jpg">
+                             <a href="https://technext.github.io/applab_2/v1.0.0/">
+                              <img  src="img/portfolio/site1.jpg" width="400" height="240" alt="" />
+                            </a>
+                        </div>
+                        <div class="portfolio__item__text">
+                            <h4>AppWebSite</h4>
+                            <ul>
+                                <li>Branding</li>
+                                <li>Web Application</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                       
+            </div>
+            
+            
+          <!--  <div class="row">
+                <div class="col-lg-12">
+                    <div class="pagination__option">
+                        <a href="#" class="arrow__pagination left__arrow"><span class="arrow_left"></span> Наступна</a>
+                        <a href="#" class="number__pagination">1</a>
+                        <a href="#" class="number__pagination">2</a>
+                        <a href="#" class="arrow__pagination right__arrow"> Попердня <span class="arrow_right"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div> -->  
+    </section>
+    <!-- Portfolio Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__top__logo">
+                            <a  style="color:white" th:href="@{/}"> SITE TRONIX DEVELOPER GROUP </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__top__social">
+                            <a href="https://t.me/vsprava"><i class="fa fa-telegram"></i></a>
+                    
+                            <a href="#"><i class="fa fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/site_tronix/"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__option">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="footer__option__item">
+                            <h5>Детальніше</h5>
+                            <p>SiteTronix працює над створенням інтернет сайтів </p>
+                            <a href="#" class="read__more"> Зв'язатися <span class="arrow_right"></span></a>
+                        </div>
+                    </div>
+                    
+                     <div class="col-lg-2 col-md-3 col-sm-3">
+                        <div class="footer__option__item">
+                            <h5>Наші роботи</h5>
+                            <ul>
+                                <li><a href="#">Портфоліо #1</a></li>
+                                <li><a href="#">Портфоліо #2</a></li>
+                            <!--     <li><a href="#">Головна сторінка</a></li>--> 
+                            
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-lg-2 col-md-3 col-sm-3">
+                        <div class="footer__option__item">
+                            <h5>Others</h5>
+                            <ul>
+                                <li><a href="#">Сервіси</a></li>
+                                <li><a href="#">Контакти</a></li>
+                                <li><a href="#">Детальніше</a></li>
+                                <li><a href="#">Головна сторінка</a></li>
+                            </ul>
+                        </div>
+                    </div>   
+                                
+                    <div class="col-lg-4 col-md-12">
+                        <div class="footer__option__item">
+                            <h5>Новини</h5>
+                            <p>Відправити почту для отримання новин від SiteTronix</p>
+                            <form action="#">
+                                <input type="text" placeholder="Email">
+                                <button type="submit"><i class="fa fa-send"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p class="footer__copyright__text">Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>
+                            All rights reserved | This template is made with <i style="color:indigo" class="fa fa-heart-o"
+                                aria-hidden="true"></i> by <a style="color:indigo" href="" target="_blank">SiteTronix</a>
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!--  FancyBox script -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+   
+</body>
+
+</html>
