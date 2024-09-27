@@ -238,7 +238,7 @@ ol {
   letter-spacing: 2px;
   padding: 14px 34px 12px;
   width: 100%;
-  transition: all 2s ease; /* Длительность перехода 
+  transition: all 2s ease; /* Г„Г«ГЁГІГҐГ«ГјГ­Г®Г±ГІГј ГЇГҐГ°ГҐГµГ®Г¤Г  
   cursor: pointer;
 
 }
@@ -313,8 +313,8 @@ ol {
 
 
 /*.site-btn:hover {
-    background-color: indigo; /* Цвет фона при наведении 
-    background-image: linear-gradient(to right, inigo , blue); /* Переливание 
+    background-color: indigo; /* Г–ГўГҐГІ ГґГ®Г­Г  ГЇГ°ГЁ Г­Г ГўГҐГ¤ГҐГ­ГЁГЁ 
+    background-image: linear-gradient(to right, inigo , blue); /* ГЏГҐГ°ГҐГ«ГЁГўГ Г­ГЁГҐ 
 } */
 
 
@@ -2399,6 +2399,103 @@ ol {
 }
 
 
+/*---------------------
+    PriceList
+-----------------------*/
+
+.price {
+  background: transparent;
+  padding: 30px;
+}
+
+.price-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 400px;
+}
+
+.price__title {
+  color: white;
+  width: 600px;
+  margin: 0;
+}
+
+.price__hash {
+  background-color: black;
+  padding: 10px;
+  font-weight: 700;
+}
+
+.price__label {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  margin-right: 20px;
+}
+
+.service__detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service__detail-name {
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+  width: 400px;
+}
+
+.service__detail-price {
+  font-size: 15px;
+  color: orange;
+  font-weight: 700;
+  margin: 0;
+}
+
+#price-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+  list-style-type: none;
+  padding: 0;
+}
+
+#price-list li {
+  flex: 1 1 45%;
+  box-sizing: border-box;
+}
+
+#category-filter {
+  background-color: white; 
+  color: black;
+  border: none;
+  border-radius: 16px;
+}
+
+#price-list li:nth-child(1),
+#price-list li:nth-child(4),
+#price-list li:nth-child(5),
+#price-list li:nth-child(8),
+#price-list li:nth-child(9),
+#price-list li:nth-child(12),
+#price-list li:nth-child(13),
+#price-list li:nth-child(16),
+#price-list li:nth-child(17),
+#price-list li:nth-child(20),
+#price-list li:nth-child(21),
+#price-list li:nth-child(24),
+#price-list li:nth-child(25) 
+
+{
+  background-color: rgba(0, 0, 0, 0.2); 
+  border-radius: 8px;
+}
 
 
   
