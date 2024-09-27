@@ -459,6 +459,110 @@ Bootstrap 5 Form Pack Template
                 </div>
             </div>
         </div>
+
+<!-- Price Section Begin -->
+         
+         <br>
+     <div id="react-root"></div>
+
+     <script type="text/babel">
+        const services = [
+          { name: 'Разработка Landing Page', description: 'Лендінг — це невеликий односторінковий сайт, який закликає клієнта зробити одну конкретну дію: наприклад, підписатися на розсилку, купити навчальний курс або замовити соковижимач.', price: ' від 3000 UAH', category: 'photo' },
+          { name: 'Розроботка Унікального сайту', description: 'Веб-сайт з унікальним дизайном та функціоналом за вашим побажанням', price: 'від 6000 UAH', category: 'other' },
+          { name: 'Розроботка Односторінкового сайту', description: 'Односторінковий сайт, на якому ви зможете донести інформацію до читачів', price: 'від 1700 UAH', category: 'photo' },
+          { name: 'Розробка Промо-сайту', description: 'Промо-сайти являють собою окремі сторінки, які створюють спеціально для реклами і просування нових пропозицій або брендів', price: '2800 UAH', category: 'video' },
+          { name: 'Корпоративний сайт', description: 'Багатосторінковий сайт, що створює презентацію компанії в Інтернеті. Його основна мета – це залучити нових клієнтів чи партнерів, розвинути бізнес шляхом розкриття переваг компанії, тощо...', price: 'від 5900 UAH', category: 'video' },
+          { name: 'Розробка Індивідуальних веб-рішень', description: 'Створення складних, індивідуальних та ефектних веб-проєктів за найкращою ціною в ... будь-яких нестандартних веб-рішень у сфері дизайну та функціоналу ресурсу.', price: 'від 7500 UAH', category: 'video' },
+          { name: 'Інтернет-магазин', description: 'Веб-сайт в інтернеті, де відбувається продаж товарів чи послуг споживачеві, враховуючи вартість товару', price: 'від 9899 UAH', category: 'video' },
+          { name: 'Создание сайтов на WordPress', description: 'WordPress - це система керування вмістом з відкритим кодом, яка через свою простоту широко застосовується для створення вебсайтів', price: 'від 9500 UAH', category: 'photo' },
+          { name: 'Сайт для кафе та ресторанів', description: 'Веб-сайт, який створюється з метою розвитку бренда та продажу кулінарних страв', price: '12000 UAH', category: 'photo' },
+          { name: 'Сайт для декількох товарів', description: 'Невеличкий сайт для продажу декілької видів товарів', price: '3500 UAH', category: 'photo' },
+          { name: 'Недорогий веб-сайт', description: 'Стилізований веб-сайт створенний з вже готових шаблонів', price: 'від 1700 UAH', category: 'video' },
+          { name: 'Розробка багатофункціонального сайту', description: 'Сайт з великою кількістю функціоналу, підходить для фінаносвих бірж', price: 'ві 23900 UAH', category: 'other' },
+          { name: 'Замовити B2B портал', description: 'Це інтернет-майданчик, в межах якого реалізуються угоди між компаніями (наприклад, виробником і гуртковиком, між гуртковиком і роздрібним продавцем)', price: 'від 25500 UAH', category: 'photo' },
+          { name: 'Сайт із IP-телефонією', description: 'Веб-сайт із Ip-телефонією', price: 'від 3400 UAH', category: 'photo' },
+          { name: 'Створення мультимедійного сайту', description: 'Веб-сайт розрахований на велику кількість мульдемедійної інформації, фото, відео, музики, тошо...', price: 'від 3900 UAH', category: 'photo' },
+          { name: 'Створення відео веб-сайту', description: 'Веб-сайт із презентацією у вигляді відео', price: 'від 5300 UAH', category: 'photo' },
+          { name: 'Заказать сайт визитку', description: 'Невеличкий сайт, що зазвичай складається з однієї (або декількох) вебсторінок та містить основну інформацію про організацію, приватну особу, компанію, товари чи послуги, прайс-листи, контактні дані', price: 'від 2334 UAH', category: 'video' },
+          { name: 'Інші сайти', description: 'Оговорення інших сайтів за бажанням клієнтів', price: 'договірна', category: 'video' },
+          
+     
+        ]
+
+        const PriceList = () => {
+          const [selectedCategory, setSelectedCategory] = React.useState('all');
+          const [expanded, setExpanded] = React.useState(null); 
+
+          const toggleDescription = (index) => {
+            setExpanded(expanded === index ? null : index);
+          };
+
+          const filteredServices = selectedCategory === 'all' 
+            ? services 
+            : services.filter(service => service.category === selectedCategory);
+
+          return (
+            <section className="price">
+              <div className="container">
+                <div className="row">
+                  <div className="section-title price-top">
+                    <h2 className="price__title">Наші ціни</h2>
+                    <span className="price__hash">#PriceList</span>
+                  </div>
+                </div>
+
+                <div className="row">
+                  <label htmlFor="category-filter" className="price__label">Категорії</label>
+                  <select 
+                    id="category-filter" 
+                    value={selectedCategory} 
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                  >
+                    <option value="all">All</option>
+                    <option value="photo">Photo Services</option>
+                    <option value="video">Video Services</option>
+                    <option value="other">Other Services</option>
+                  </select>
+                </div>
+
+                <div className="row">
+                  <ul id="price-list">
+                    {filteredServices.map((service, index) => (
+                      <li key={index}>
+                        <div 
+                          className='service__detail' 
+                          onClick={() => toggleDescription(index)} 
+                          style={{ cursor: 'pointer' }}
+                        >
+                          <h3 className="service__detail-name">{service.name}</h3>
+                          <p className="service__detail-price">{service.price}</p>
+                        </div>
+
+                        {expanded === index && (
+                          <p className="product-description">
+                            {service.description || 'No description available.'}
+                          </p>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </section>
+          );
+        };
+ 
+        const container = document.getElementById('react-root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<PriceList />);
+     </script>
+     
+     <!-- Price Section End -->
+
+
+
+
+		
     </section>
     <!--   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2798902705!2d-74.25986790365917!3d40.697670067823786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1596152431947!5m2!1sen!2sbd" -->
     <!-- Call To Action Section End -->
